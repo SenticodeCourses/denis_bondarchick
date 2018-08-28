@@ -8,11 +8,9 @@ links = collect_links(url, header)
 for key in links.keys():
     for link in links[key]:
         item_data = collect_data(link, header)
-        data_dict = {key : {
+        data_dict = {key: {
                     link: {
                         item_data
                     }
         }
         }
-        print(data_dict)
-        break
