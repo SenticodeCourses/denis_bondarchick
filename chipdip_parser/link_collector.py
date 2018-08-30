@@ -24,7 +24,6 @@ def collect_subdept_links(url, header):
     for subdept in subdepts:
         subdept_link = 'https://www.ru-chipdip.by' + subdept.find('a', {'class': 'link'}).get('href')
         links[url].append(subdept_link)
-        break
     print('Колькасць атрыманых падраздзелаў у раздзелe', url, len(subdepts))
     return links
 
@@ -32,8 +31,10 @@ def collect_subdept_links(url, header):
 def collect_links(url, header):
     dept_links = collect_dept_link(url, header)
     links_with_subdepts = {}
+    i = 0
     for dept in dept_links.keys():
-        links_with_subdepts = collect_subdept_links(dept, header)
-        time.sleep(random.randint(1, 3))
-        break
+        if i < 2:
+            links_with_subdepts = collect_subdept_links(dept, header)
+            time.sleep(random.randint(1, 3))
+            i += 1
     return links_with_subdepts
