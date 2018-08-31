@@ -6,9 +6,9 @@ some = FolderMonitor(path)
 some.start()
 # while True:
 #     intakes = input()
-#     if intakes == 'start':
-#         some.start_checking()
+#     if intakes == 'go':
+#         some.start()
 #     if intakes == 'stop':
-#         some.stop_checking()
+#         some.stop()
 
 make_tree(path)
