@@ -1,9 +1,9 @@
 from monitor import FolderMonitor
 from tree import make_tree
 
-path = '.'
+path = 'D:/temp/dev'
 some = FolderMonitor(path)
-some.start()
+some.run()
 # while True:
 #     intakes = input()
 #     if intakes == 'go':

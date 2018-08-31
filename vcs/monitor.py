@@ -2,15 +2,15 @@ import os
 import time
 import threading
 
-class FolderMonitor(threading.Thread):
+class FolderMonitor():
     def __init__(self, path):
-        threading.Thread.__init__(self)
+        # threading.Thread.__init__(self)
         self.path = path
         self.current = None
         self.last = None
         self.added = None
         self.deleted = None
-        self.deamon = True
+        # self.deamon = True
 
     def difference(self):
         if self.last is not None:
@@ -22,9 +22,9 @@ class FolderMonitor(threading.Thread):
                 if self.deleted is not None:
                     print('Выдалены', self.deleted)
 
-    def run(self, soe=None):
+    def run(self):
         while True:
-            self.last_user_input = input('input something: ')
+        #     self.last_user_input = input('input something: ')
             self.current = set(os.listdir(self.path))
             self.difference()
             self.last = self.current
