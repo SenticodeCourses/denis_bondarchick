@@ -24,6 +24,7 @@ def collect_items_data(soup):
 
 
 def collect_data(link, header):
+    data = None
     for page_num in range(1, 100):
         url = link + '?locid=minsk-dimitrova-5&page=' + str(page_num)
         page = requests.get(url, headers=header)
@@ -32,5 +33,4 @@ def collect_data(link, header):
         exist = page_exist_check(soup)
         if exist is not None:
             data = collect_items_data(soup)
-            print(type(data))
     return data

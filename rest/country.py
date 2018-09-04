@@ -1,9 +1,9 @@
 class Country:
     def __init__(self):
-        self.name = 'name'
-        self.population = 'population'
-        self.countries = ''
-        self.dictation = ''
+        self.population = '~10M'
+        self.dictation = 'yes'
+        self.list = {'Belarus': 'Belarus'}
 
-    def root(self):
-        return self.countries
+    def view_country(self, country):
+        welcome = '    add "/region/" to URL'
+        return self.list[country] + welcome
