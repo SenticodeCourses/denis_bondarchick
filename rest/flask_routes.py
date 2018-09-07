@@ -20,7 +20,7 @@ app.json_encoder = MyJSONEncoder
 
 @app.route('/', methods=['GET'], strict_slashes=False)
 def index():
-    return 'Hello!'
+    return jsonify(Country())
 
 
 @app.route('/country/', methods=['GET'], strict_slashes=False)

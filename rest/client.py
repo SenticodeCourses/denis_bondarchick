@@ -1,6 +1,6 @@
 import requests
+from json import load
 import flask_routes
-from bs4 import BeautifulSoup
 from threading import Thread
 
 
@@ -12,11 +12,13 @@ class Input(Thread):
                                      'AppleWebKit/537.36 (KHTML, like Gecko) OPR/55.0.2994.44'}
 
     def run(self):
-        # self.daemon = True
         while True:
             flask_routes.start()
 
+    def do_nice(self, json_data):
+        for key in json_data.keys():
+            print(key + '\t'*2, json_data[key])
+
     def get(self, url):
         page = requests.get(url, headers=self.header)
-        soup = BeautifulSoup(page.content, 'html.parser')
-        print(soup)
+        Input.do_nice(self, page.json())

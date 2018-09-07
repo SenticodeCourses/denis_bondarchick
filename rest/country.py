@@ -2,7 +2,7 @@ class Country:
     def __init__(self):
         self.population = '~10M'
         self.dictation = 'yes'
-        self.list = {'Belarus': 'Belarus'}
+        self.list = ['Belarus']
 
     def view_country(self, country):
         welcome = '    add "/region/" to URL'
