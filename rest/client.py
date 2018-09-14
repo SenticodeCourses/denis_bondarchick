@@ -1,5 +1,4 @@
 import requests
-from json import load
 import flask_routes
 from threading import Thread
 
